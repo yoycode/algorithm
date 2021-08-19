@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer = "YES",
+          max;
+        if (a > b) max = a;
+        else max = b;
+        if (max < c) max = c;
+
+        answer = "NO";
+        //         if(max == a){
+        //             if(a < b + c) answer = 'YES';
+        //         }else if(max == b){
+        //             if(b < a + c) answer = 'YES';
+        //         }else if(max == c){
+        //             if(c < a + b) answer = 'YES';
+        //         }
+        //         return answer;
+
+        switch (max) {
+          case a:
+            if (a < b + c) answer = "YES";
+            break;
+          case b:
+            if (b < a + c) answer = "YES";
+            break;
+          case c:
+            if (c < a + b) answer = "YES";
+            break;
+        }
+        return answer;
+      }
+
+      console.log(solution(6, 7, 11));
+    </script>
+  </body>
+</html>
